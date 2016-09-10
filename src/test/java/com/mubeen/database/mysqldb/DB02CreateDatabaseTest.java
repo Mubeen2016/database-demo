@@ -13,17 +13,20 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Ignore;
 
 import junit.framework.TestCase;
 
+@Ignore
 public class DB02CreateDatabaseTest extends TestCase {
-
+	
+	
 	public void test01CreateNewDatabase() throws SQLException {
 		Connection Conn = DriverManager.getConnection("jdbc:mysql://localhost/?user=root&password=root");
 		Statement s = Conn.createStatement();
 		s.executeUpdate("CREATE DATABASE IF NOT EXISTS CUSTOMER");
 	}
-
+	
 	public void test02CreateNewTable() throws Exception {
 		Connection connection = null;
 		connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/customer", "root", "root");
@@ -34,7 +37,7 @@ public class DB02CreateDatabaseTest extends TestCase {
 		statement.executeUpdate(sql);
 		System.out.println("Table Created");
 	}
-
+	
 	public void test03CreateData() throws Exception {
 		Connection connection = null;
 		connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/customer", "root", "root");
