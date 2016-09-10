@@ -1,0 +1,1 @@
+Resources files of "src/main/java" is located in this project-package.
