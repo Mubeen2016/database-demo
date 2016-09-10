@@ -28,7 +28,7 @@ public class DB02CreateDatabaseTest extends TestCase {
 		Connection connection = null;
 		connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/customer", "root", "root");
 		Statement statement = connection.createStatement();
-		// This line has the issue
+
 		String sql = "CREATE TABLE IF NOT EXISTS CustomerInfo (" + "id INT(64) NOT NULL AUTO_INCREMENT,"
 				+ "name VARCHAR(20)," + "phone VARCHAR(12)," + "PRIMARY KEY(id))";
 		statement.executeUpdate(sql);
@@ -75,8 +75,7 @@ public class DB02CreateDatabaseTest extends TestCase {
 
 
 		// using absolute path. This is not recommended
-		// String csvFile = "C:\\Users\\mubeen\\Google
-		// Drive\\workspace\\database-demo\\mysqldb\\src\\test\\java\\com\\mubeen\\database\\mysqldb\\customer-data.csv";
+		// String csvFile = "C:\\Users\\mubeen\\Google Drive\\workspace\\database-demo\\mysqldb\\src\\test\\java\\com\\mubeen\\database\\mysqldb\\customer-data.csv";
 		String userDir = System.getProperty("user.dir");
 		String filePath = userDir + File.separator + "src" + File.separator + "test" + File.separator + "resources"
 				+ File.separator;
